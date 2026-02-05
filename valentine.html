@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For My Valentine 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff4f81, #ff2f68);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* floating hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.6);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+@keyframes float {
+    0% {transform: translateY(100vh); opacity: 0;}
+    50% {opacity: 1;}
+    100% {transform: translateY(-10vh); opacity: 0;}
+}
+
+.card {
+    background: linear-gradient(180deg, #ff9ab8, #ff6f9f);
+    width: 320px;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 60px;
+}
+
+button {
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#yes {
+    background: #ff2f68;
+    color: white;
+}
+
+#no {
+    background: #333;
+    color: white;
+    position: absolute;
+    left: 180px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- hearts -->
+<script>
+for(let i=0;i<20;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(3+Math.random()*5)+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<div class="card">
+    <!-- 🔴 REPLACE IMAGE LINK BELOW -->
+    <img src="herphoto.jpg" alt="My Love">
+    
+
+    <h2>Hey My Love 💖</h2>
+    <p>
+        Every smile of yours feels like home.  
+        Every moment with you feels like magic.  
+        And today… I just have one important question.
+    </p>
+
+    <h3>Will you be my Valentine? ❤️</h3>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Yes ❤️</button>
+        <button id="no">No 💔</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.style.transition = "none"; // 🔥 remove smooth animation
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 280;
+    const y = Math.random() * 90;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+function yesClicked() {
+    window.location.href = "yes.html";
+}
+</script>
+
+</body>
+</html>
